@@ -27,4 +27,16 @@ attr_accessor :title, :id
     end
     projects
   end
+
+  def self.find(id)
+    project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
+    title = project.fetch("title")
+    id = project.fetch("id").to_i
+    Project.new({title: title, id: id})
+  end
+
+  def update(project)
+    @title = project.fetch(:title)
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
 end
