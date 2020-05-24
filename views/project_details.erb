@@ -1,0 +1,12 @@
+<div class="text-end mt-5"><a href="/projects/<%= @project.id %>/edit">Edit Project</a></div>
+<div class="text-center mt-2"><h2 >Project details for </h2> <h1 class="mt-3"><%= @project.title %></h1></div>
+<% if @project.volunteers.any? %>
+<h2 class="mt-3 mb-4">Volunteers associated:
+<ol>
+  <% @project.volunteers.each do |volunteer| %>
+  <li class="text-center"><a href="/volunteers/<%= volunteer.id %>/edit/project/<%= @project.id %>"  ><h3><%= volunteer.name %></h3></a></li>
+</ol>
+  <% end %>
+<% else %>
+<h4 class="text-center mt-3">There are no volunteers for this project at this time</h4>
+<% end %>
