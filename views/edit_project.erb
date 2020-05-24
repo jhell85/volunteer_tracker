@@ -1,0 +1,27 @@
+<form action='/projects/<%= @project.id %>' method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button class="btn-danger btn mt-5 ">Delete Project</button>
+</form>
+<h2 class="text-center mt-5 mb-3">edit project:<h2> <h1 class="text-center mb-3"><%= @project.title %> </h1>
+<form action='/projects/<%= @project.id %>' method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-row">
+    <div class="box-decore pr-5 pl-5 input-group input-group-lg col-md-5 mx-auto">
+      <input type="text" class="class-input form-control text-center" name="title" placeholder='change title'>
+      <div class="input-group-prepend">
+        <button type="submit" class="btn-success btn">Update Project</button>
+      </div>
+    </div>
+  </div>
+</form>
+<form  class="mt-3" action='/projects/<%= @project.id %>/volunteers' method="post">
+  <div class='row'>
+    <div class='col-4 offset-md-4'>
+      <label for="name">add a volunteer</label>
+      <input type="text" name="name" placeholder="volunteer's name" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-md-6"><button type="submit" class="btn btn-success mt-3">Add Volunteer</button></div>
+  </div>
+</form>
