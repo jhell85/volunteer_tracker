@@ -1,0 +1,13 @@
+<h1 class="text-center mt-5"><%= @volunteer.name %></h1>
+<form  class="mt-3" action='/volunteers/<%= @volunteer.id %>/<%= @project.id %>' method="post">
+<input name="_method" type="hidden" value="patch">
+  <div class='row'>
+    <div class='col-4 offset-md-4'>
+      <label for="name">change name for <%= @volunteer.name %></label>
+      <input type="text" name="name" placeholder="volunteer's name" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-md-6"><button type="submit" class="btn btn-success mt-3">Update Volunteer</button></div>
+  </div>
+</form>
