@@ -12,9 +12,10 @@
   </div>
 </form>
 <% if @projects.any? %>
-<ul>
+<ol>
   <% @projects.each do |project| %>
-    <li><%= project.title %> </li>
+  <li class="text-center"><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+</ol>
   <% end %>
 <% else %>
 <h4 class="text-center mt-3">There are no Projects at this time</h4>
